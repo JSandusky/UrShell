@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F39EFA05-9471-47B3-B284-E45E3D6C9722}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Backend</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CLRSupport>true</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;URHO3D_SSE;URHO3D_MINIDUMPS;URHO3D_FILEWATCHER;URHO3D_PROFILING;URHO3D_LOGGING;URHO3D_D3D11;URHO3D_ANGELSCRIPT;URHO3D_NAVIGATION;URHO3D_NETWORK;URHO3D_PHYSICS;URHO3D_URHO2D;URHO3D_STATIC_DEFINE;BACKEND_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\dev\UrhoLM\include;C:\dev\UrhoLM\include\Urho3D\ThirdParty;C:\dev\UrhoLM\include\Urho3D\ThirdParty\Bullet;C:\dev\UrhoLM\include\Urho3D\ThirdParty\Lua</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\dev\UrhoLM\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Urho3D_d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;winmm.lib;imm32.lib;version.lib;ws2_32.lib;dbghelp.lib;d3d11.lib;d3dcompiler.lib;dxgi.lib;dxguid.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;BACKEND_EXPORTS;URHO3D_SSE;URHO3D_MINIDUMPS;URHO3D_FILEWATCHER;URHO3D_PROFILING;URHO3D_LOGGING;URHO3D_D3D11;URHO3D_ANGELSCRIPT;URHO3D_NAVIGATION;URHO3D_NETWORK;URHO3D_PHYSICS;URHO3D_URHO2D;URHO3D_STATIC_DEFINE;BACKEND_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\dev\UrhoLM\include;C:\dev\UrhoLM\include\Urho3D\ThirdParty;C:\dev\UrhoLM\include\Urho3D\ThirdParty\Bullet;C:\dev\UrhoLM\include\Urho3D\ThirdParty\Lua</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\dev\UrhoLM\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Urho3D.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;winmm.lib;imm32.lib;version.lib;ws2_32.lib;dbghelp.lib;d3d11.lib;d3dcompiler.lib;dxgi.lib;dxguid.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Attributes.h" />
+    <ClInclude Include="autogenerated\BoundingBox.h" />
+    <ClInclude Include="autogenerated\ColorFrame.h" />
+    <ClInclude Include="autogenerated\Frustum.h" />
+    <ClInclude Include="autogenerated\Graphics.h" />
+    <ClInclude Include="autogenerated\Material.h" />
+    <ClInclude Include="autogenerated\ObjectAnimation.h" />
+    <ClInclude Include="autogenerated\ParticleEffect.h" />
+    <ClInclude Include="autogenerated\Polyhedron.h" />
+    <ClInclude Include="autogenerated\Sphere.h" />
+    <ClInclude Include="autogenerated\TextureFrame.h" />
+    <ClInclude Include="autogenerated\ValueAnimation.h" />
+    <ClInclude Include="autogenerated\VectorBuffer.h" />
+    <ClInclude Include="Backend.h" />
+    <ClInclude Include="BufferWrapper.h" />
+    <ClInclude Include="CallbackInterfaces.h" />
+    <ClInclude Include="Container.h" />
+    <ClInclude Include="ContextManager.h" />
+    <ClInclude Include="GraphicsResources.h" />
+    <ClInclude Include="MaterialResource.h" />
+    <ClInclude Include="MathBind.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="ResourceRefWrapper.h" />
+    <ClInclude Include="SceneWrappers.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StringHash.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="UrControl.h" />
+    <ClInclude Include="UrhoUtil.h" />
+    <ClInclude Include="Variant.h" />
+    <ClInclude Include="XML.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="autogenerated\BoundingBox.cpp" />
+    <ClCompile Include="autogenerated\ColorFrame.cpp" />
+    <ClCompile Include="autogenerated\Frustum.cpp" />
+    <ClCompile Include="autogenerated\Graphics.cpp" />
+    <ClCompile Include="autogenerated\Material.cpp" />
+    <ClCompile Include="autogenerated\ObjectAnimation.cpp" />
+    <ClCompile Include="autogenerated\ParticleEffect.cpp" />
+    <ClCompile Include="autogenerated\Polyhedron.cpp" />
+    <ClCompile Include="autogenerated\Sphere.cpp" />
+    <ClCompile Include="autogenerated\TextureFrame.cpp" />
+    <ClCompile Include="autogenerated\ValueAnimation.cpp" />
+    <ClCompile Include="autogenerated\VectorBuffer.cpp" />
+    <ClCompile Include="Backend.cpp" />
+    <ClCompile Include="BufferWrapper.cpp" />
+    <ClCompile Include="ContextManager.cpp" />
+    <ClCompile Include="GraphicsResources.cpp" />
+    <ClCompile Include="MaterialResource.cpp" />
+    <ClCompile Include="MathBind.cpp" />
+    <ClCompile Include="ResourceRefWrapper.cpp" />
+    <ClCompile Include="SceneWrappers.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="StringHash.cpp" />
+    <ClCompile Include="UrControl.cpp" />
+    <ClCompile Include="UrhoUtil.cpp" />
+    <ClCompile Include="Variant.cpp" />
+    <ClCompile Include="XML.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Backend.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Atf.Core">
+      <HintPath>..\EditorWinForms\lib\Atf.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Atf.Gui">
+      <HintPath>..\EditorWinForms\lib\Atf.Gui.dll</HintPath>
+    </Reference>
+    <Reference Include="Atf.Gui.WinForms">
+      <HintPath>..\EditorWinForms\lib\Atf.Gui.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MinLayer\MinLayer.csproj">
+      <Project>{42b19e05-878b-4354-b304-92c05be09194}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

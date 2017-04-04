@@ -1,0 +1,81 @@
+<Serializable>
+    <Component>
+    
+        <!-- Drawables 3D -->
+        <Drawable>
+            <StaticModel>
+                <AnimatedModel />
+                <Skybox></Skybox>
+            </StaticModel>
+            <Text3D></Text3D>
+            <Terrain></Terrain>
+            <StaticModelGroup></StaticModelGroup>
+            <ParticleEmitter></ParticleEmitter>
+            <BillboardSet></BillboardSet>
+            <CustomGeometry></CustomGeometry>
+            <DecalSet></DecalSet>
+            <Light></Light>
+            
+        </Drawable>
+        
+        <!-- Drawables 2D -->
+        <Drawable2D>
+            <StaticSprite2D></StaticSprite2D>
+            <AnimatedSprite2D></AnimatedSprite2D>
+            <TileMap2D></TileMap2D>
+            <ParticleEmitter2D></ParticleEmitter2D>
+        </Drawable2D>
+        
+        <!-- Network -->
+        <NetworkPriority></NetworkPriority>
+        
+        <!-- Audio -->
+        <SoundSource></SoundSource>
+        <SoundSource3D></SoundSource3D>
+        <SoundListener></SoundListener>
+        
+        <!-- Logic -->
+        <SplinePath></SplinePath>
+        <AnimationController></AnimationController>
+        <ScriptInstancec></ScriptInstancec>
+        <LuaScriptInstance></LuaScriptInstance>
+        
+        <!-- Scene -->
+        <Camera></Camera>
+        <Zone></Zone>
+        
+        <!-- Subsystem -->
+        <PhysicsWorld></PhysicsWorld>
+        <PhysicsWorld2D></PhysicsWorld2D>
+        <Octree></Octree>
+        <DebugRenderer></DebugRenderer>
+        
+        <!-- Navigation -->
+        <Navigable></Navigable>
+        <NavigationMesh>
+            <DynamicNavigationMesh></DynamicNavigationMesh>
+        </NavigationMesh>
+        <DetourCrowdManager></DetourCrowdManager>
+        <Obstacle></Obstacle>
+        <NavArea></NavArea>
+        <CrowdAgent></CrowdAgent>
+        <OffMeshConnection></OffMeshConnection>
+        
+        <!-- 3D Physics -->
+        <RigidBody></RigidBody>
+        <CollisionShape></CollisionShape>
+        <Constraint></Constraint>
+        
+        <!-- 2D Physics -->
+        <RigidBody2D></RigidBody2D>
+        <CollisionBox2D></CollisionBox2D>
+        <CollisionCircle2D></CollisionCircle2D>
+        <CollisionEdge2D></CollisionEdge2D>
+        <CollisionPolygon2D></CollisionPolygon2D>
+    </Component>
+    <UIElement>
+        <BorderImage>
+            
+        </BorderImage>
+    </UIElement>
+</Serializable>

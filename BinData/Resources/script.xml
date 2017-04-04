@@ -1,0 +1,32 @@
+<scintilla>
+    <file type="*.as" class="ScintillaNET.Style.Cpp; ScintillaNET">
+        <color key="Character" value="" />
+        <color key="Comment" value="" />
+        <color key="CommentDoc" value="" />
+        <color key="CommentDocKeyword" value="" />
+        <color key="CommentDocKeywordError" value="" />
+        <color key="CommentLine" value="" />
+        <color key="CommentLineDoc" value="" />
+        
+        <color key="Default" value="" />
+        
+        <color key="EscapeSequence" value="" />
+        <color key="GlobalClass" value="" />
+        <color key="Identifier" value="" />
+        <color key="Number" value="" />
+        <color key="Operator" value="" />
+        <color key="Preprocessor" value="" />
+        <color key="PreprocessorComment" value="" />
+        <color key="PreprocessorCommentDoc" value="" />
+        <color key="Regex" value="" />
+        <color key="String" value="" />
+        <color key="StringEol" value="" />
+        <color key="StringRaw" value="" />
+        
+        <color key="TaskMarker" value="" />
+        <color key="TripleVerbatim" value="" />
+        <color key="UserLiteral" value="" />
+        <color key="Word" value="" />
+        <color key="Word2" value="" />
+    </file>
+</scintilla>

@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{843DE6B3-D771-4D8C-9FCC-1D59F0170270}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EditorCore</RootNamespace>
+    <AssemblyName>EditorCore</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Atf.Core">
+      <HintPath>..\EditorWinForms\lib\Atf.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Atf.Gui">
+      <HintPath>..\EditorWinForms\lib\Atf.Gui.dll</HintPath>
+    </Reference>
+    <Reference Include="Atf.Gui.WinForms">
+      <HintPath>..\EditorWinForms\lib\Atf.Gui.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MarkdownSharp">
+      <HintPath>..\packages\MarkdownSharp.1.13.0.0\lib\35\MarkdownSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>..\packages\DockPanelSuite.2.9.0.0\lib\net40\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Automation\Automatable.cs" />
+    <Compile Include="CommandRegistry.cs" />
+    <Compile Include="Controls\AtfSelectionHandler.cs" />
+    <Compile Include="Controls\DocumentDockContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\HierarchyTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MarkDownViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MarkDownViewer.Designer.cs">
+      <DependentUpon>MarkDownViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Palette.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PanelDockContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyGrid\ColorPickerEditor.cs" />
+    <Compile Include="Controls\PropertyGrid\MaskEditor.cs" />
+    <Compile Include="Controls\PropertyGrid\NamedEnumEditor.cs" />
+    <Compile Include="Controls\PropertyGrid\ResourceRefEditor.cs" />
+    <Compile Include="Controls\PropertyGrid\ResourceRefListEditor.cs" />
+    <Compile Include="Controls\PropertyGrid\StringVectorEditor.cs" />
+    <Compile Include="Controls\PropertyGrid\VectorControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyGrid\VectorEditor.cs" />
+    <Compile Include="Controls\SceDockPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Converters.cs" />
+    <Compile Include="Data\History.cs" />
+    <Compile Include="Data\Levenstein.cs" />
+    <Compile Include="Data\TypeConverters.cs" />
+    <Compile Include="Data\UndoRedo.cs" />
+    <Compile Include="Data\XMLTypeHandler.cs" />
+    <Compile Include="Dialogs\LongTextDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\LongTextDlg.Designer.cs">
+      <DependentUpon>LongTextDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\QuickAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\QuickAction.Designer.cs">
+      <DependentUpon>QuickAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\PropertyDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\PropertyDlg.Designer.cs">
+      <DependentUpon>PropertyDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SettingsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SettingsDlg.Designer.cs">
+      <DependentUpon>SettingsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentManager.cs" />
+    <Compile Include="Documents\Attributes.cs" />
+    <Compile Include="Documents\DocumentMeta.cs" />
+    <Compile Include="Documents\IHiearchialDocument.cs" />
+    <Compile Include="Documents\ILoggingDocument.cs" />
+    <Compile Include="Documents\INotableDocument.cs" />
+    <Compile Include="Documents\IPropertyDocument.cs" />
+    <Compile Include="Documents\ISceneDocument.cs" />
+    <Compile Include="DragDrop\DragMatcher.cs" />
+    <Compile Include="ErrorHandler.cs" />
+    <Compile Include="Media\ImageUtil.cs" />
+    <Compile Include="Media\NamedImageList.cs" />
+    <Compile Include="Interfaces\Accelerators.cs" />
+    <Compile Include="Interfaces\ICommandAction.cs" />
+    <Compile Include="Interfaces\IProgramInitializer.cs" />
+    <Compile Include="Interfaces\IProgramTerminated.cs" />
+    <Compile Include="Interfaces\ISearchable.cs" />
+    <Compile Include="Interfaces\SingularObject.cs" />
+    <Compile Include="Interop\ProcessWrapper.cs" />
+    <Compile Include="Interop\TaskWorker.cs" />
+    <Compile Include="Interop\UrhoConstants.cs" />
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Media\ImageCropper.cs" />
+    <Compile Include="Media\ImageDatabase.cs" />
+    <Compile Include="Media\ImageListXML.cs" />
+    <Compile Include="Menu\CommandMenuStripItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menu\DocumentMenuStripItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menu\EditMenuStripItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menu\FileMenuStripItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menu\MenuUtil.cs" />
+    <Compile Include="Menu\PanelMenuStripItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panels\FileSystemPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\FileSystemPanel.Designer.cs">
+      <DependentUpon>FileSystemPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\HelpPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\HelpPanel.Designer.cs">
+      <DependentUpon>HelpPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\HierarchyPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\HierarchyPanel.Designer.cs">
+      <DependentUpon>HierarchyPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\LayersPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\LayersPanel.Designer.cs">
+      <DependentUpon>LayersPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\LogPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\LogPanel.Designer.cs">
+      <DependentUpon>LogPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\NotesPanel.cs" />
+    <Compile Include="Panels\NotesPanel.Designer.cs">
+      <DependentUpon>NotesPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\PalettePanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\PalettePanel.Designer.cs">
+      <DependentUpon>PalettePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\PanelHint.cs" />
+    <Compile Include="Panels\PropertyEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\PropertyEditor.Designer.cs">
+      <DependentUpon>PropertyEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\PropertyTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\PropertyTable.Designer.cs">
+      <DependentUpon>PropertyTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plugins\ImagePlugin.cs" />
+    <Compile Include="Plugins\Plugin.cs" />
+    <Compile Include="ProgramBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflect.cs" />
+    <Compile Include="RenderView\OrbitZoomRender.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RequirementResolver.cs" />
+    <Compile Include="ServiceManager.cs" />
+    <Compile Include="Settings\CoreSettings.cs" />
+    <Compile Include="Settings\SettingsManager.cs" />
+    <Compile Include="Settings\SettingsObject.cs" />
+    <Compile Include="StringExtensions.cs" />
+    <Compile Include="Toolbars\CommandToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Toolbars\DocumentToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Toolbars\ToolbarBuilder.cs" />
+    <Compile Include="Toolbars\ToolbarSaver.cs" />
+    <Compile Include="Translators\HierarchyTranslator.cs" />
+    <Compile Include="TypeUtils.cs" />
+    <Compile Include="Typing\BackendTyping.cs" />
+    <Compile Include="Typing\ExternalPropertyDescriptor.cs" />
+    <Compile Include="Typing\ISourcedDescriptor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\Circuit\" />
+    <Folder Include="Controls\Curves\" />
+    <Folder Include="Controls\Timelines\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Backend\Backend.vcxproj">
+      <Project>{f39efa05-9471-47b3-b284-e45e3d6c9722}</Project>
+      <Name>Backend</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PluginLibrary\PluginLibrary.csproj">
+      <Project>{101ab150-3cfd-4879-b2f5-5fd81607768e}</Project>
+      <Name>PluginLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\MarkDownViewer.resx">
+      <DependentUpon>MarkDownViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\LongTextDlg.resx">
+      <DependentUpon>LongTextDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\QuickAction.resx">
+      <DependentUpon>QuickAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\PropertyDlg.resx">
+      <DependentUpon>PropertyDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SettingsDlg.resx">
+      <DependentUpon>SettingsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\FileSystemPanel.resx">
+      <DependentUpon>FileSystemPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\HelpPanel.resx">
+      <DependentUpon>HelpPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\LogPanel.resx">
+      <DependentUpon>LogPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\NotesPanel.resx">
+      <DependentUpon>NotesPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\PropertyEditor.resx">
+      <DependentUpon>PropertyEditor.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="license.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

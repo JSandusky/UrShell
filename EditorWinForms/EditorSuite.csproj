@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0DBB11C3-4476-4513-BCA0-FC76D7D5EAAB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EditorWinForms</RootNamespace>
+    <AssemblyName>EditorWinForms</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>db800ea9</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Atf.Core">
+      <HintPath>lib\Atf.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Atf.Gui">
+      <HintPath>lib\Atf.Gui.dll</HintPath>
+    </Reference>
+    <Reference Include="Atf.Gui.WinForms">
+      <HintPath>lib\Atf.Gui.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MarkdownSharp">
+      <HintPath>..\packages\MarkdownSharp.1.13.0.0\lib\35\MarkdownSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ScintillaNET">
+      <HintPath>..\packages\jacobslusser.ScintillaNET.3.3.0\lib\net40\ScintillaNET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>..\packages\DockPanelSuite.2.9.0.0\lib\net40\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Browsers\ResourceTile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Browsers\ResourceTile.Designer.cs">
+      <DependentUpon>ResourceTile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XmlTreeControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\XmlTreeControl.Designer.cs">
+      <DependentUpon>XmlTreeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataObject.cs" />
+    <Compile Include="Data\ExternalTypeRegister.cs" />
+    <Compile Include="Data\GeneralTypeHandler.cs" />
+    <Compile Include="Data\PropertyGridTypeHandler.cs" />
+    <Compile Include="Data\VariantTranslate.cs" />
+    <Compile Include="Data\VariantWrappers.cs" />
+    <Compile Include="Data\XMLTypeHandler.cs" />
+    <Compile Include="Documents\AnimCmd.cs" />
+    <Compile Include="Documents\BehaviorTree\BehaviorTreeCmd.cs" />
+    <Compile Include="Documents\BehaviorTree\BehaviorTreeDocument.cs" />
+    <Compile Include="Documents\BehaviorTree\BehaviorTreeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Documents\BehaviorTree\BehaviorTreeView.Designer.cs">
+      <DependentUpon>BehaviorTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\CommonSettingsTypes.cs" />
+    <Compile Include="Documents\Constructor\Brushes\Brush.cs" />
+    <Compile Include="Documents\Constructor\ConstructorCmd.cs" />
+    <Compile Include="Documents\Constructor\ConstructorDocument.cs" />
+    <Compile Include="Documents\Constructor\ConstructorView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Documents\Constructor\ConstructorView.Designer.cs">
+      <DependentUpon>ConstructorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\Cooker\CookerAuto.cs" />
+    <Compile Include="Documents\Cooker\CookerCmd.cs" />
+    <Compile Include="Documents\Cooker\CookerData.cs" />
+    <Compile Include="Documents\Cooker\CookerDocument.cs" />
+    <Compile Include="Documents\Cooker\CookerPalette.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Documents\Cooker\CookerSettings.cs" />
+    <Compile Include="Documents\Cooker\CookerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Cooker\CookerView.Designer.cs">
+      <DependentUpon>CookerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\DocumentBase.cs" />
+    <Compile Include="Documents\Material\MaterialDocument.cs" />
+    <Compile Include="Documents\Material\MaterialSettings.cs" />
+    <Compile Include="Documents\Material\MaterialView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Material\MaterialView.Designer.cs">
+      <DependentUpon>MaterialView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\Model\ModelDocument.cs" />
+    <Compile Include="Documents\Model\ModelView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Model\ModelView.Designer.cs">
+      <DependentUpon>ModelView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\Model\ModelViewerSettings.cs" />
+    <Compile Include="Documents\ObjectAnim\ObjectAnimCmd.cs" />
+    <Compile Include="Documents\ObjectAnim\ObjectAnimDocument.cs" />
+    <Compile Include="Documents\ObjectAnim\ObjectAnimView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\ObjectAnim\ObjectAnimView.Designer.cs">
+      <DependentUpon>ObjectAnimView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\Particle\ParticleDocument.cs" />
+    <Compile Include="Documents\Particle\ParticleView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Particle\ParticleView.Designer.cs">
+      <DependentUpon>ParticleView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\SceneUI\SceneCmd.cs" />
+    <Compile Include="Documents\SceneUI\SceneDocument.cs" />
+    <Compile Include="Documents\SceneUI\SceneGUI.cs" />
+    <Compile Include="Documents\SceneUI\SceneSettings.cs" />
+    <Compile Include="Documents\SceneUI\SceneTreeView.cs" />
+    <Compile Include="Documents\SceneUI\SceneView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\SceneUI\SceneView.Designer.cs">
+      <DependentUpon>SceneView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\ShaderGraph\ShaderGraphAuto.cs" />
+    <Compile Include="Documents\ShaderGraph\ShaderGraphCmd.cs" />
+    <Compile Include="Documents\ShaderGraph\ShaderGraphDocument.cs" />
+    <Compile Include="Documents\ShaderGraph\ShaderGraphSettings.cs" />
+    <Compile Include="Documents\ShaderGraph\ShaderGraphView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Documents\ShaderGraph\ShaderGraphView.Designer.cs">
+      <DependentUpon>ShaderGraphView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\ShapeCmd.cs" />
+    <Compile Include="Documents\SkeletalAnim\IKSetup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Documents\SkeletalAnim\IKSetup.Designer.cs">
+      <DependentUpon>IKSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\SkeletalAnim\SkeletalAnimDocument.cs" />
+    <Compile Include="Documents\SkeletalAnim\SkeletalAnimView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Documents\SkeletalAnim\SkeletalAnimView.Designer.cs">
+      <DependentUpon>SkeletalAnimView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\SpaceCmd.cs" />
+    <Compile Include="Documents\Timelines\EffectTimeline.cs" />
+    <Compile Include="Documents\Timelines\ModelAnimTimeline.cs" />
+    <Compile Include="Documents\Timelines\ObjectAnimTimeline.cs" />
+    <Compile Include="Documents\UI\UIDocument.cs" />
+    <Compile Include="Documents\UI\UIEditorCmd.cs" />
+    <Compile Include="Documents\UI\UIEditView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Documents\UI\UIEditView.Designer.cs">
+      <DependentUpon>UIEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DragDrop\BasicMatchers.cs" />
+    <Compile Include="DragDrop\SceneMatchers.cs" />
+    <Compile Include="GlobalConstants.cs" />
+    <Compile Include="Hierarchies\ComponentHierarchyTranslator.cs" />
+    <Compile Include="Hierarchies\NodeHierarchyTranslator.cs" />
+    <Compile Include="Hierarchies\SceneHierarchyTranslator.cs" />
+    <Compile Include="Hierarchies\UIElementHierarchyTranslator.cs" />
+    <Compile Include="Panels\PalettePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\PalettePanel.Designer.cs">
+      <DependentUpon>PalettePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\SearchPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panels\SearchPanel.Designer.cs">
+      <DependentUpon>SearchPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\SpawnPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\SpawnPanel.Designer.cs">
+      <DependentUpon>SpawnPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\TerrainPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\TerrainPanel.Designer.cs">
+      <DependentUpon>TerrainPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plugins\AutomationPlugins.cs" />
+    <Compile Include="Plugins\GraphPlugins.cs" />
+    <Compile Include="Plugins\ImagePlugins.cs" />
+    <Compile Include="Plugins\PackagePlugins.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Documents\Cooker\CookerView.resx">
+      <DependentUpon>CookerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\Material\MaterialView.resx">
+      <DependentUpon>MaterialView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\ObjectAnim\ObjectAnimView.resx">
+      <DependentUpon>ObjectAnimView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\Particle\ParticleView.resx">
+      <DependentUpon>ParticleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\SkeletalAnim\SkeletalAnimView.resx">
+      <DependentUpon>SkeletalAnimView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\SearchPanel.resx">
+      <DependentUpon>SearchPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="app.manifest" />
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\BehaviorTree\BehaviorTrees.md" />
+    <EmbeddedResource Include="Documents\Cooker\Cooker.md" />
+    <EmbeddedResource Include="Documents\Material\MaterialEditor.md" />
+    <EmbeddedResource Include="Documents\Model\ModelViewer.md" />
+    <EmbeddedResource Include="Documents\ObjectAnim\ObjectAnim.md" />
+    <EmbeddedResource Include="Documents\Particle\ParticleEditor.md" />
+    <EmbeddedResource Include="Documents\SceneUI\SceneEditor.md" />
+    <EmbeddedResource Include="Documents\SkeletalAnim\AnimEditor.md" />
+    <EmbeddedResource Include="Documents\UI\UIEditor.md" />
+    <None Include="packages.config" />
+    <None Include="Panels\Documentation.md" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\Circuit\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Backend\Backend.vcxproj">
+      <Project>{f39efa05-9471-47b3-b284-e45e3d6c9722}</Project>
+      <Name>Backend</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EditorCore\EditorCore.csproj">
+      <Project>{843de6b3-d771-4d8c-9fcc-1d59f0170270}</Project>
+      <Name>EditorCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MinLayer\MinLayer.csproj">
+      <Project>{42b19e05-878b-4354-b304-92c05be09194}</Project>
+      <Name>MinLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PluginLibrary\PluginLibrary.csproj">
+      <Project>{101ab150-3cfd-4879-b2f5-5fd81607768e}</Project>
+      <Name>PluginLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ImageRes\x.png" />
+    <EmbeddedResource Include="ImageRes\y.png" />
+    <EmbeddedResource Include="ImageRes\z.png" />
+    <EmbeddedResource Include="ImageRes\a.png" />
+    <EmbeddedResource Include="ImageRes\b.png" />
+    <EmbeddedResource Include="ImageRes\bottom.png" />
+    <EmbeddedResource Include="ImageRes\g.png" />
+    <EmbeddedResource Include="ImageRes\left.png" />
+    <EmbeddedResource Include="ImageRes\r.png" />
+    <EmbeddedResource Include="ImageRes\right.png" />
+    <EmbeddedResource Include="ImageRes\top.png" />
+    <EmbeddedResource Include="ImageRes\w.png" />
+    <EmbeddedResource Include="ImageRes\RotateManip32.png" />
+    <EmbeddedResource Include="ImageRes\ScaleManip32.png" />
+    <EmbeddedResource Include="ImageRes\TranslateManip32.png" />
+    <None Include="ImageRes\SmoothShading32.png" />
+    <None Include="ImageRes\Wireframe32.png" />
+    <None Include="ImageRes\Texture32.png" />
+    <None Include="ImageRes\Document32.png" />
+    <None Include="ImageRes\game.png" />
+    <None Include="ImageRes\gameObject.png" />
+    <None Include="ImageRes\locator.png" />
+    <None Include="ImageRes\Asset32.png" />
+    <None Include="ImageRes\gameObjectFolder.png" />
+    <None Include="ImageRes\GridSnap32.png" />
+    <None Include="ImageRes\RotateOnSnap32.png" />
+    <None Include="ImageRes\VertexSnap32.png" />
+    <None Include="ImageRes\group.png" />
+    <Content Include="license.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
