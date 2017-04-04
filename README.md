@@ -1,5 +1,7 @@
 # UrhoEditorSuite
 
+![Screenshot](ReadmeImages/Multiview.png)
+
 Winforms based document centered IDE for Urho3D
 
 *Summary of a Document*
